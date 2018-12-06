@@ -1,0 +1,27 @@
+{% set col = 3 %} <!-- Default col set to 6. Could change to 4-->
+{% if 12 % section.blocks | length == 0 %}
+    {% set col = (12 / section.blocks | length)|int %}
+{%endif%}
+
+<div class="container-fluid p-0">
+	<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			{% if section.title %}<h2 class="text-center">{{section.title}}</h2>{%endif%}
+			{% if section.text %}<p class="text-center">{{section.text}}</p>{%endif%}
+		</div>
+	</div>
+</div>
+	<div class="row no-gutters">
+		{% for block in section.blocks %}
+			<div class="col-sm-{{col}} text-center">
+				<img src="{%if block.imgUrl %}{{block.imgUrl}}{%else%}https://via.placeholder.com/600x400.png?text=Missing+imgUrl{%endif%}" class="img-fluid">
+				<!-- <h3>{{block.title}}</h3>
+				<p>{{block.text}}</p>
+				{% if block.linkUrl %}
+				<a href="{{section.linkUrl}}" class="btn btn-outline-primary">{{block.linkText}}</a>
+				{%endif%} -->
+			</div>	
+		{% endfor %}
+	</div>
+</div>

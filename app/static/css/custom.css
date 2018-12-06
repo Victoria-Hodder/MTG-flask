@@ -1,0 +1,17 @@
+.row, .carousel {
+    padding-bottom: 40px;
+}
+.infobar {
+	background-color: darkslategrey;
+	color: white;
+}
+.social a:hover {
+    color: slategrey;
+}
+.social a {
+    color: black;
+}
+
+footer {
+	background-color: lightgrey
+}
