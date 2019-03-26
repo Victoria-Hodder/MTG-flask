@@ -6,7 +6,5 @@
 
 
 {% block content %}
-	{% for section in content.settings %}
-		{% include 'partials/%s.html' % section.type %}
-	{% endfor%}
+	<h1>{{content.title}}</h1>
 {% endblock %}
